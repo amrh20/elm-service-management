@@ -1,0 +1,58 @@
+<div class="search-bar">
+  <div class="search-bar__row">
+    <div class="row">
+      <div class="col-xl-2 mb-3 mb-xl-0">
+        <div class="d-flex align-items-center h-100">
+          <span class="search-bar__txt">Search Filters</span>
+          <img
+            src="assets/images/icons/Filter.svg"
+            alt="Filter Icon"
+            class="search-bar__img"
+          />
+        </div>
+      </div>
+      <div class="search-bar__input-group col-xl-4 mb-3 mb-xl-0">
+        <div class="search-bar__input-wrapper input_with_end_icon">
+          <input
+            type="text"
+            class="search-bar__input form-control"
+            placeholder="Search by service name or code"
+            [(ngModel)]="searchText"
+            (input)="onSearchChange()"
+          />
+          <div class="search-bar__icon search_icon">
+            <img src="assets/images/icons/search_icon.svg" alt="Search Icon" />
+          </div>
+        </div>
+      </div>
+
+      <div class="search-bar__dropdown col-xl-3 mb-3 mb-xl-0">
+        <p-dropdown
+          [options]="statusOptions"
+          [(ngModel)]="selectedStatus"
+          placeholder="Status"
+          (onChange)="onSearchChange()"
+        ></p-dropdown>
+      </div>
+
+      <div
+        class="search-bar__dropdown"
+        [class.col-xl-3]="!showClearButton"
+        [class.col-xl-2]="showClearButton"
+      >
+        <p-dropdown
+          [options]="priceTypeOptions"
+          [(ngModel)]="selectedPriceType"
+          placeholder="Select Price Type"
+          (onChange)="onSearchChange()"
+        ></p-dropdown>
+      </div>
+
+      <div *ngIf="showClearButton" class="search-bar__button col-lg-1">
+        <button class="search-bar__clear-button" (click)="clearFilters()">
+          Reset
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

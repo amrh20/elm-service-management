@@ -1,0 +1,32 @@
+<div class="services-wrapper">
+  <div class="services-wrapper__container">
+    <app-service-info
+      title="Service Information"
+      [items]="serviceItems"
+      [cols]="3"
+    ></app-service-info>
+
+    <app-service-info
+      title="Service Description"
+      [items]="ServiceDescription"
+      [cols]="1"
+    ></app-service-info>
+    <app-service-info
+      title="VAT Information"
+      [items]="VatInfo"
+      [cols]="6"
+    ></app-service-info>
+  </div>
+
+  <button
+    class="g-btn g-btn--secondary services-wrapper__btn"
+    (click)="goBack()"
+  >
+    <img
+      class="g-btn__icon mx-1"
+      src="assets/images/icons/back_icon.svg"
+      alt="Back Icon"
+    />
+    <span class="g-btn__text">Back</span>
+  </button>
+</div>

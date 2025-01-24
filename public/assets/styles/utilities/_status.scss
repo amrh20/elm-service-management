@@ -1,0 +1,22 @@
+.status {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 7px 8px;
+    border-radius: 4px;
+    min-width: 85px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+}
+
+/* Separate classes for active and inactive */
+.status.active {
+    color: #1eb05b;
+    background-color: #e7f5ea;
+}
+
+.status.inactive {
+    color: #bf7a1f;
+    background-color: #fdf2e5;
+}

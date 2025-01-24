@@ -1,0 +1,15 @@
+<section class="service-info">
+  <header class="service-info__header">
+    <h2 class="service-info__title">{{ title }}</h2>
+  </header>
+  <div class="service-info__content" [ngClass]="'cols-' + cols">
+    <div *ngFor="let item of items" class="service-info__item">
+      <span class="service-info__label">{{ item.label }}</span>
+      <span class="service-info__value">{{ item.value }}</span>
+    </div>
+  </div>
+
+  <div class="service-info__pattern">
+    <img src="assets/images/details_head_pattern.svg" alt="" />
+  </div>
+</section>

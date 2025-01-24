@@ -1,0 +1,17 @@
+<div class="service-management">
+  <div class="service-management__actions">
+    <button class="g-btn g-btn--main">
+      <span class="g-btn__text">Add Service</span>
+      <img
+        class="g-btn__icon"
+        src="assets/images/icons/plus_icon.svg"
+        alt="Add Icon"
+      />
+    </button>
+  </div>
+  <app-search-bar (searchChange)="onSearch($event)"></app-search-bar>
+  <app-table
+    [serviceData]="serviceData"
+    [tableColumns]="tableColumns"
+  ></app-table>
+</div>

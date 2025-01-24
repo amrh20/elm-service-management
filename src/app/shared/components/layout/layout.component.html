@@ -1,0 +1,20 @@
+<div class="layout-wrapper">
+  <div class="layout">
+    <div
+      class="layout__side-menu"
+      [ngClass]="{ open_side_menu: sideMenuStatus }"
+    >
+      <app-side-menu></app-side-menu>
+    </div>
+    <div class="layout__content">
+      <app-breadcrumb (sideMenuStatus)="openSideMenu($event)"></app-breadcrumb>
+      <router-outlet></router-outlet>
+    </div>
+
+    <div
+      class="layout__overlay"
+      *ngIf="sideMenuStatus"
+      (click)="toggleSideMenu()"
+    ></div>
+  </div>
+</div>

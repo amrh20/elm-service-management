@@ -1,0 +1,63 @@
+<ng-container *ngIf="filteredData?.length > 0; else noData">
+  <div class="table_wrapper">
+    <p-table
+      [value]="filteredData"
+      [paginator]="true"
+      [rows]="10"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+      class="table-container"
+      [scrollable]="true"
+      scrollDirection="horizontal"
+      scrollHeight="flex"
+      [paginator]="true"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th *ngFor="let col of tableColumns">{{ col.header }}</th>
+          <th></th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData>
+        <tr>
+          <td *ngFor="let col of tableColumns">
+            <span
+              *ngIf="col.field === 'status'"
+              [ngClass]="{
+                active: rowData[col.field] === 'Active',
+                inactive: rowData[col.field] === 'Inactive'
+              }"
+              class="status"
+            >
+              {{ rowData[col.field] }}
+            </span>
+            <span *ngIf="col.field !== 'status'">
+              {{ rowData[col.field] }}
+            </span>
+          </td>
+          <td>
+            <div class="table-container__buttons-wrapper">
+              <button
+                (click)="onEdit(rowData)"
+                class="table-container__action-btn"
+              >
+                <span>Edit</span>
+                <img src="assets/images/icons/edit.svg" alt="edit icon" />
+              </button>
+              <button
+                (click)="onView(rowData)"
+                class="table-container__action-btn"
+              >
+                <span>View</span>
+                <img src="assets/images/icons/view.svg" alt="view icon" />
+              </button>
+            </div>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</ng-container>
+
+<ng-template #noData>
+  <app-no-data-found></app-no-data-found>
+</ng-template>

@@ -1,0 +1,18 @@
+.form-control {
+    border: 1px solid #d8d8d8;
+    color: #a4b1c4;
+    border-radius: 4px;
+    padding: 10px 12px;
+    &:focus {
+        box-shadow: none;
+        border: 1px solid #d8d8d8;
+        background-color: transparent;
+    }
+}
+::placeholder {
+    color: #a4b1c4 !important;
+}
+
+::-ms-input-placeholder {
+    color: #a4b1c4 !important;
+}

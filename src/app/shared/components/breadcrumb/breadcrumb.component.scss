@@ -1,0 +1,121 @@
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #70819d;
+    border-bottom: 1px solid #e2e7f1;
+    margin: 0 -28px;
+    padding: 0 28px 12px 28px;
+
+    @media (max-width: 992px) {
+        display: block;
+        background: #f5f5f5;
+        margin-top: -28px;
+        padding-top: 28px;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: #98a1a5;
+        font-size: 14px;
+    }
+
+    &__separator {
+        margin: 0 8px;
+        color: #a4a5a5;
+    }
+
+    &__current {
+        color: #495770;
+        font-size: 18px;
+        font-weight: 600;
+        display: block;
+    }
+
+    .menu_icon {
+        display: none;
+        margin-inline-end: 18px;
+        background-color: transparent;
+        border: 0;
+        img {
+            max-width: 25px;
+        }
+        @media (max-width: 992px) {
+            display: block;
+        }
+    }
+    .user_actions {
+        &__container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            position: relative;
+            @media (max-width: 992px) {
+                margin-top: 20px;
+            }
+        }
+        &__image {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        &__name {
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        &__dropdown {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            display: flex;
+            align-items: center;
+
+            &-icon {
+                width: 16px;
+                height: 16px;
+                transition: transform 0.3s ease;
+
+                &:hover {
+                    transform: translateY(2px);
+                }
+            }
+        }
+
+        .dropdown-menu-list {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            margin-top: 5px;
+            width: 100%;
+
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    padding: 10px 20px;
+                    font-size: 14px;
+                    color: #333;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: #f5f5f5;
+                    }
+                }
+            }
+        }
+    }
+}

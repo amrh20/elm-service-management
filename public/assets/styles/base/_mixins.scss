@@ -1,0 +1,14 @@
+// Flexbox Centering
+@mixin flex-center($align: center, $justify: center) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+// Text Ellipsis (Truncate Text)
+@mixin text-ellipsis($width: 100%) {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: $width;
+}

@@ -1,0 +1,43 @@
+<nav class="breadcrumb">
+  <div class="d-flex">
+    <button class="menu_icon" (click)="openSideMenu()">
+      <img src="assets/images/icons/menu.png" alt="menu icon" />
+    </button>
+    <div>
+      <ng-container *ngFor="let breadcrumb of breadcrumbs; let last = last">
+        <a *ngIf="!last" [routerLink]="breadcrumb.url" class="breadcrumb__link">
+          {{ breadcrumb.label }}
+        </a>
+        <span *ngIf="!last" class="breadcrumb__separator"> / </span>
+        <span *ngIf="last" class="breadcrumb__current">{{
+          breadcrumb.label
+        }}</span>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="user_actions" (click)="toggleDropdown()">
+    <div class="user_actions__container">
+      <img
+        class="user_actions__image"
+        src="assets/images/Profile.svg"
+        alt="User profile image"
+      />
+      <span class="user_actions__name">Mohammed Alharbi</span>
+      <button class="user_actions__dropdown" aria-label="Toggle dropdown menu">
+        <img
+          class="user_actions__dropdown-icon"
+          src="assets/images/icons/chevron-down.svg"
+          alt="Arrow down"
+        />
+      </button>
+
+      <div class="dropdown-menu-list" *ngIf="isDropdownOpen">
+        <ul>
+          <li (click)="onProfile()">Profile</li>
+          <li (click)="onLogout()">Logout</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

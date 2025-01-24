@@ -1,0 +1,25 @@
+.services-wrapper {
+    &__container {
+        margin: 80px 0;
+    }
+    .g-btn {
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            background-color: #e8f7f9;
+        }
+
+        &__icon {
+            margin-right: 8px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        &:hover .g-btn__icon {
+            transform: translateX(-5px);
+        }
+
+        &__text {
+            margin-left: 4px;
+        }
+    }
+}
