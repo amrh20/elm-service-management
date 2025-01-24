@@ -59,15 +59,22 @@
         flex-direction: column;
         padding: 10px;
         border-bottom: 1px solid #eee;
+        transition: all 0.3s ease;
 
         &:last-child {
             border-bottom: none;
+        }
+
+        &:hover {
+            background: #f8fafb;
+            transform: translateX(5px);
         }
     }
 
     &__label {
         color: #70819d;
         margin-bottom: 4px;
+        font-weight: 400;
     }
 
     &__value {
@@ -77,5 +84,18 @@
         position: absolute;
         top: 0;
         right: 0;
+    }
+    &__pattern img {
+        animation: patternPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes patternPulse {
+        0%,
+        100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.07);
+        }
     }
 }

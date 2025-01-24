@@ -2,11 +2,9 @@
 @use "./base/fonts";
 @use "./base/variables";
 @use "./base/general";
-@use "./base/mixins";
 
 // components
 @use "./components/buttons";
-@use "./components/details-card";
 @use "./components/table";
 
 // forms

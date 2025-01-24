@@ -10,13 +10,18 @@
     width: fit-content;
 }
 
-/* Separate classes for active and inactive */
 .status.active {
     color: #1eb05b;
     background-color: #e7f5ea;
+    &:hover {
+        transform: rotate(-5deg);
+    }
 }
 
 .status.inactive {
     color: #bf7a1f;
     background-color: #fdf2e5;
+    &:hover {
+        transform: rotate(5deg);
+    }
 }

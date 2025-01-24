@@ -12,7 +12,7 @@
       [paginator]="true"
     >
       <ng-template pTemplate="header">
-        <tr>
+        <tr [@rowAnimation] [@filterAnimation]>
           <th *ngFor="let col of tableColumns">{{ col.header }}</th>
           <th></th>
         </tr>
@@ -39,6 +39,7 @@
               <button
                 (click)="onEdit(rowData)"
                 class="table-container__action-btn"
+                aria-label="Edit service"
               >
                 <span>Edit</span>
                 <img src="assets/images/icons/edit.svg" alt="edit icon" />
@@ -46,6 +47,7 @@
               <button
                 (click)="onView(rowData)"
                 class="table-container__action-btn"
+                aria-label="View service"
               >
                 <span>View</span>
                 <img src="assets/images/icons/view.svg" alt="view icon" />

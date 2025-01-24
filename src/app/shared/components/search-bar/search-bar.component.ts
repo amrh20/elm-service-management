@@ -30,12 +30,10 @@ export class SearchBarComponent {
     { label: 'Other Type', value: 'Other Type' },
   ];
 
-  // Getter to determine if "Clear Filters" button should be displayed
   get showClearButton(): boolean {
     return !!(this.searchText || this.selectedStatus || this.selectedPriceType);
   }
 
-  // Emit search changes when any filter changes
   onSearchChange(): void {
     this.searchChange.emit({
       searchText: this.searchText,
@@ -44,13 +42,11 @@ export class SearchBarComponent {
     });
   }
 
-  // Clear all filters and re-emit the search state
   clearFilters(): void {
     this.searchText = '';
     this.selectedStatus = null;
     this.selectedPriceType = null;
-    this.onSearchChange(); // Emit the updated state
+    this.onSearchChange();
   }
-
 
 }

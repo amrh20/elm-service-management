@@ -23,7 +23,6 @@ export class ServiceListComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    // Adding dummy data to serviceData
     this.serviceData = [
       { serviceName: 'Property Transfer', code: 'P-T01', type: 'Service Type', status: 'Active' },
       { serviceName: 'Property Ownership', code: 'P-O2', type: 'Service Type', status: 'Active' },
@@ -36,13 +35,15 @@ export class ServiceListComponent implements OnInit {
       { serviceName: 'Property Transfer', code: 'P-T01', type: 'Service Type', status: 'Active' },
       { serviceName: 'Property Ownership', code: 'P-O2', type: 'Service Type', status: 'Active' },
       { serviceName: 'Property Transfer', code: 'P-T01', type: 'Service Type', status: 'Inactive' },
+      { serviceName: 'Property Ownership', code: 'P-O2', type: 'Service Type', status: 'Inactive' },
+      { serviceName: 'Property Ownership', code: 'P-O2', type: 'Service Type', status: 'Active' },
+      { serviceName: 'Property Transfer', code: 'P-T01', type: 'Service Type', status: 'Inactive' },
       { serviceName: 'Property Ownership', code: 'P-O2', type: 'Service Type', status: 'Inactive' }
     ];
   }
 
 
   onSearch(filters: any): void {
-    // Pass the filters to the table component
     this.table.onSearch(filters);
   }
 
