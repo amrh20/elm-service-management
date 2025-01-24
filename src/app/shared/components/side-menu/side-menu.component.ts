@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterLink, Router } from '@angular/router';
+import { RouterLink, Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-side-menu',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, RouterModule],
   templateUrl: './side-menu.component.html',
   styleUrl: './side-menu.component.scss',
 
