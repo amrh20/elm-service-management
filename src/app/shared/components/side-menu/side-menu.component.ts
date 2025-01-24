@@ -10,7 +10,6 @@ import { RouterLink, Router, RouterModule } from '@angular/router';
 
 })
 export class SideMenuComponent {
-  constructor (private router: Router) {
-    console.log('Current route:', this.router.url);
+  constructor () {
   }
 }
